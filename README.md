@@ -35,17 +35,26 @@ First, we will need to log into our domain controller (DC-1), using our jane_adm
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Now, let's complete a cache exercise, go back to DC-1 and change the mainframe's record address to 8.8.8.8, then go back to Client-1 and ping "mainframe" again, do observe that it will ping the old address. Now go and observe the local dns cache by entering the command ipconfig /displaydns, then flush the dns cache by entering the command ipconfig /flushdns, you'll observe that the cache is empty. Now ping the "mainframe" again, observe that it will ping the new address.
+
+<img src="https://i.imgur.com/lEoYcJO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/GTGh0Q0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2jflzJI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/n1Kr7y1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/yMHXGo6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Now, let's create a CNAME record, in DC-1, this will point the host "search" to www.google.com. Now go back to Client-1 and attempt to ping "search" and observe the results of the CNAME record, then use the command nslookup, and nslookup "search", and observe the results of the CNAME record.
+
+<img src="https://i.imgur.com/bClzoWM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/l7UVzlV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
